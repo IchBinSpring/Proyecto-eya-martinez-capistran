@@ -1,0 +1,23 @@
+PROYECTO: GameVault - catalogo de videojuegos
+Integrantes: Tabata y JuanPablo
+
+ESTRUCTURAS
+1. Map<String,Videojuego> (LinkedHashMap): buscar por titulo en O(1)
+2. Set<String> (TreeSet): generos sin repetir y ordenados
+3. Deque<String> (pila ArrayDeque): historial de generos consultados
+EXTRA: Grafo (Map de vecinos + BFS): recomendaciones de juegos similares
+
+CONSULTAS (Streams)
+1. titulosDeGenero (filter + map)
+2. mejoresCalificadas (sorted + limit)
+3. promedioDeGenero (mapToDouble + average)
+4. conteoPorGenero (groupingBy + counting)
+5. masReciente (max + Optional)
+
+RIESGOS (si el usuario hace X, pasaria Y)
+1. Escribe una letra en el menu -> NumberFormatException
+2. Pide recomendaciones de un juego que no existe -> NullPointerException
+3. Pide una consulta con el catalogo vacio -> resultado vacio sin explicar
+4. Agrega un juego con calificacion 15 -> dato imposible
+5. Agrega el mismo juego dos veces -> duplicado
+6. Deja el titulo vacio -> dato basura
